@@ -1,0 +1,303 @@
+{
+  "info": {
+    "name": "Smart Event Planner API",
+    "description": "Complete API collection for Smart Event Planner Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Event Management",
+      "item": [
+        {
+          "name": "Create Cricket Tournament",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mumbai Cricket Tournament\",\n  \"location\": \"Mumbai\",\n  \"date\": \"2024-03-16\",\n  \"eventType\": \"outdoor sports\",\n  \"description\": \"Annual cricket tournament at Oval Maidan\",\n  \"duration\": 8,\n  \"participants\": 22\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"]
+            }
+          }
+        },
+        {
+          "name": "Create Beach Wedding",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Beach Wedding Ceremony\",\n  \"location\": \"Goa\",\n  \"date\": \"2024-12-10\",\n  \"eventType\": \"wedding\",\n  \"description\": \"Sunset beach wedding at Anjuna Beach\",\n  \"duration\": 6,\n  \"participants\": 150\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"]
+            }
+          }
+        },
+        {
+          "name": "Create Hiking Trip",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Lonavala Hiking Expedition\",\n  \"location\": \"Lonavala\",\n  \"date\": \"2024-10-20\",\n  \"eventType\": \"hiking\",\n  \"description\": \"Trek to Tiger's Leap viewpoint\",\n  \"duration\": 6,\n  \"participants\": 15\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"]
+            }
+          }
+        },
+        {
+          "name": "List All Events",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/events?page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Event by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Event",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Event Name\",\n  \"description\": \"Updated description\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Weather Integration",
+      "item": [
+        {
+          "name": "Get Weather for Mumbai (March 16)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/Mumbai/2024-03-16",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "Mumbai", "2024-03-16"]
+            }
+          }
+        },
+        {
+          "name": "Get Current Weather",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/Mumbai/current",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "Mumbai", "current"]
+            }
+          }
+        },
+        {
+          "name": "Get 5-Day Forecast",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/Mumbai/forecast",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "Mumbai", "forecast"]
+            }
+          }
+        },
+        {
+          "name": "Check Weather Suitability for Event",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/weather-check",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "weather-check"]
+            }
+          }
+        },
+        {
+          "name": "Get Event Suitability Score",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/suitability",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "suitability"]
+            }
+          }
+        },
+        {
+          "name": "Get Alternative Dates",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/events/{{eventId}}/alternatives?days=7",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events", "{{eventId}}", "alternatives"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Weather Cache Status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/cache/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "cache", "status"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Handling Tests",
+      "item": [
+        {
+          "name": "Invalid Location Test",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/InvalidCity123/2024-03-16",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "InvalidCity123", "2024-03-16"]
+            }
+          }
+        },
+        {
+          "name": "Invalid Date Format",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/Mumbai/invalid-date",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "Mumbai", "invalid-date"]
+            }
+          }
+        },
+        {
+          "name": "Create Event with Invalid Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"location\": \"Mumbai\",\n  \"date\": \"2023-01-01\",\n  \"eventType\": \"invalid-type\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "System Endpoints",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "Clear Weather Cache",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/weather/cache/clear",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "weather", "cache", "clear"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "eventId",
+      "value": "your-event-id-here"
+    }
+  ]
+}

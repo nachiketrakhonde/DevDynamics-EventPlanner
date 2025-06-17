@@ -1,0 +1,55 @@
+{
+  "name": "Smart Event Planner API",
+  "description": "A backend service for planning outdoor events with weather integration",
+  "repository": "https://github.com/yourusername/smart-event-planner-backend",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/node-dot-js.svg",
+  "keywords": ["node", "express", "weather", "events", "api"],
+  "image": "heroku/nodejs",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "addons": [
+    {
+      "plan": "papertrail:choklad",
+      "as": "PAPERTRAIL"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "OPENWEATHER_API_KEY": {
+      "description": "OpenWeatherMap API key for weather data",
+      "required": true
+    },
+    "RATE_LIMIT_WINDOW_MS": {
+      "description": "Rate limiting window in milliseconds",
+      "value": "900000"
+    },
+    "RATE_LIMIT_MAX_REQUESTS": {
+      "description": "Maximum requests per window",
+      "value": "100"
+    },
+    "CACHE_TTL": {
+      "description": "Cache time-to-live in seconds",
+      "value": "3600"
+    },
+    "LOG_LEVEL": {
+      "description": "Logging level",
+      "value": "info"
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo 'Deployment completed successfully!'"
+  }
+}

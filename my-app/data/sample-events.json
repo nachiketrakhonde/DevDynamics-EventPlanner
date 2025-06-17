@@ -1,0 +1,53 @@
+[
+  {
+    "id": "sample-1",
+    "name": "Mumbai Cricket Tournament",
+    "location": "Mumbai",
+    "date": "2024-03-16",
+    "eventType": "outdoor sports",
+    "description": "Annual cricket tournament at Oval Maidan",
+    "duration": 8,
+    "participants": 22,
+    "requirements": {
+      "minTemperature": 15,
+      "maxWindSpeed": 25,
+      "maxPrecipitation": 20
+    },
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "sample-2",
+    "name": "Beach Wedding Ceremony",
+    "location": "Goa",
+    "date": "2024-12-10",
+    "eventType": "wedding",
+    "description": "Sunset beach wedding at Anjuna Beach",
+    "duration": 6,
+    "participants": 150,
+    "requirements": {
+      "minTemperature": 18,
+      "maxWindSpeed": 15,
+      "maxPrecipitation": 5
+    },
+    "createdAt": "2024-01-15T11:00:00.000Z",
+    "updatedAt": "2024-01-15T11:00:00.000Z"
+  },
+  {
+    "id": "sample-3",
+    "name": "Lonavala Hiking Expedition",
+    "location": "Lonavala",
+    "date": "2024-10-20",
+    "eventType": "hiking",
+    "description": "Trek to Tiger's Leap viewpoint",
+    "duration": 6,
+    "participants": 15,
+    "requirements": {
+      "minTemperature": 10,
+      "maxWindSpeed": 30,
+      "maxPrecipitation": 40
+    },
+    "createdAt": "2024-01-15T12:00:00.000Z",
+    "updatedAt": "2024-01-15T12:00:00.000Z"
+  }
+]
